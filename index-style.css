@@ -1,0 +1,31 @@
+/* O container do mapa precisa ser relativo */
+.map-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* A imagem ocupa o espaço base */
+.map-image {
+    width: 100%;
+    display: block;
+}
+
+/* Os pins flutuam por cima da imagem usando porcentagem (assim não quebra em telas diferentes) */
+.map-pin {
+    position: absolute;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.map-pin:hover {
+    transform: scale(1.3); /* Dá um efeito de zoom ao passar o mouse */
+}
+
+/* Exemplo de posicionamento aproximado baseado na sua foto */
+.pin-chiesetta { top: 68%; left: 55%; }
+.pin-viaverde { top: 40%; left: 57%; }
+.pin-scar { top: 42%; left: 35%; }
+.pin-rodoviaria { top: 52%; left: 28%; }
