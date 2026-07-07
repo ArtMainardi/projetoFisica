@@ -15,6 +15,20 @@
         </div>
     </header>
 
+    <div class="city-banner">
+        <div class="banner-left">
+            🎂 150 Anos de Jaraguá do Sul
+        </div>
+
+        <div class="banner-progress">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="banner-right">
+            0/4 Contratos Concluídos
+        </div>
+    </div>
+
     <main class="map-dashboard">
         <section class="map-frame">
             <div class="map-label">
@@ -26,17 +40,35 @@
                     alt="Mapa de Jaraguá do Sul"
                     class="map-image">
 
-                <button class="map-pin pin-chiesetta" onclick="selecionarMissao(1)">📍</button>
-                <button class="map-pin pin-viaverde" onclick="selecionarMissao(2)">📍</button>
-                <button class="map-pin pin-scar" onclick="selecionarMissao(3)">📍</button>
-                <button class="map-pin pin-rodoviaria" onclick="selecionarMissao(4)">📍</button>
+                <button class="map-pin pin-chiesetta" onclick="selecionarMissao(1)">
+                    <span>⛪</span>
+                </button>
+
+                <button class="map-pin pin-viaverde" onclick="selecionarMissao(2)">
+                    <span>🌳</span>
+                </button>
+
+                <button class="map-pin pin-scar" onclick="selecionarMissao(3)">
+                    <span>🎭</span>
+                </button>
+
+                <button class="map-pin pin-rodoviaria" onclick="selecionarMissao(4)">
+                    <span>🚌</span>
+                </button>
             </section>
         </section>
 
         <section class="info-sidebar" id="sidebar-missao">
             <div id="conteudo-vazio">
-                <h3>Central de Comando</h3>
-                <p>Clique em um dos marcadores (📍) no mapa de Jaraguá do Sul para visualizar os detalhes do contrato de engenharia.</p>
+                <div class="robot-helper">
+                    🤖
+                </div>
+                <h3>Bem-vindo, Engenheiro!</h3>
+                <p>
+                    A cidade precisa de você para concluir
+                    quatro contratos especiais de aniversário.
+                </p>
+
             </div>
             
             <div id="conteudo-missao" style="display: none;">

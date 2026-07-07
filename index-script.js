@@ -42,4 +42,6 @@ function selecionarMissao(id) {
     document.getElementById("sidebar-descricao").innerText = missao.descricao;
     document.getElementById("sidebar-imagem").src = missao.imagem;
     document.getElementById("sidebar-botao").href = missao.link;
+
+    document.getElementById("sidebar-missao").classList.add("missao-ativa");
 }
