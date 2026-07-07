@@ -1,31 +1,162 @@
-/* O container do mapa precisa ser relativo */
-.map-container {
-    position: relative;
-    display: inline-block;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* A imagem ocupa o espaço base */
-.map-image {
-    width: 100%;
-    display: block;
+body{
+    font-family:"Trebuchet MS",sans-serif;
+    min-height:100vh;
+    background:#f7f0e4;
+    background-image:
+    radial-gradient(circle at 20% 20%,#fff6e9 0%,transparent 20%),
+    radial-gradient(circle at 80% 40%,#f3ead7 0%,transparent 25%);
+    color:#4d443d;
 }
 
-/* Os pins flutuam por cima da imagem usando porcentagem (assim não quebra em telas diferentes) */
-.map-pin {
-    position: absolute;
-    background: transparent;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    transition: transform 0.2s;
+.main-header{
+    padding:40px 20px;
+    display:flex;
+    justify-content:center;
 }
 
-.map-pin:hover {
-    transform: scale(1.3); /* Dá um efeito de zoom ao passar o mouse */
+.header-card{
+    background:#fffaf2;
+    padding:30px 50px;
+    border-radius:24px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transform:rotate(-1deg);
+    border:3px solid #f1e2c8;
 }
 
-/* Exemplo de posicionamento aproximado baseado na sua foto */
-.pin-chiesetta { top: 68%; left: 55%; }
-.pin-viaverde { top: 40%; left: 57%; }
-.pin-scar { top: 42%; left: 35%; }
-.pin-rodoviaria { top: 52%; left: 28%; }
+.header-card h1{
+    font-size:3rem;
+    color:#4c6a5f;
+}
+
+.header-card p{
+    margin-top:8px;
+    color:#7c756e;
+}
+
+.map-dashboard{
+    display:grid;
+    grid-template-columns:2fr 420px;
+    gap:30px;
+    max-width:1500px;
+    margin:auto;
+    padding:20px;
+}
+
+.map-frame{
+    background:#fffaf2;
+    border-radius:30px;
+    padding:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.map-label{
+    position:absolute;
+    top:-15px;
+    left:30px;
+    background:#f7cfa3;
+    color:#594c43;
+    padding:10px 25px;
+    border-radius:999px;
+    font-weight:bold;
+    box-shadow:0 5px 10px rgba(0,0,0,.08);
+}
+
+.map-container{
+    position:relative;
+}
+
+.map-image{
+    width:100%;
+    display:block;
+    border-radius:20px;
+    border:8px solid #efe1c7;
+}
+
+.map-pin{
+    position:absolute;
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#ffcf9d;
+    color:#5b4f45;
+    font-size:24px;
+    box-shadow:0 6px 12px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.map-pin:hover{
+    transform:translateY(-6px) rotate(-8deg);
+}
+
+.map-pin::after{
+    content:"!";
+    position:absolute;
+    top:-8px;
+    right:-5px;
+    width:24px;
+    height:24px;
+    background:#f58c8c;
+    color:white;
+    border-radius:50%;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.info-sidebar{
+    background:#fffaf2;
+    border-radius:30px;
+    padding:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    border:3px dashed #e6d7bc;
+}
+
+#sidebar-titulo{
+    color:#4c6a5f;
+    font-size:1.8rem;
+}
+
+#sidebar-imagem{
+    width:100%;
+    margin:15px 0;
+    border-radius:20px;
+    border:6px solid #efe1c7;
+}
+
+.tag-physics{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#cde8d3;
+    color:#35614a;
+    font-weight:bold;
+    margin-bottom:12px;
+}
+
+.btn-contract{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    margin-top:20px;
+    padding:16px;
+    border-radius:18px;
+    background:#f7cfa3;
+    color:#594c43;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-contract:hover{
+    transform:scale(1.03);
+    background:#f3be83;
+}
