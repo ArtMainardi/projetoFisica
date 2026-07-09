@@ -34,6 +34,7 @@
 }
 
 .train{
+    letter-spacing: -10px;
     position:fixed;
     bottom:15px;
     animation:trainMove 18s linear infinite;

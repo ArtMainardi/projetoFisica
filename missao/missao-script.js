@@ -1,5 +1,4 @@
 function atualizarRPM(valor){
-
     const rpmDisplay = document.getElementById("rpm-display");
     const rotor = document.getElementById("rpm-rotor");
 
@@ -16,5 +15,78 @@ function atualizarRPM(valor){
 
     rotor.style.animation = `rpmSpin ${duration}s linear infinite`;
 }
+window.addEventListener("load", atualizarRPM(0));
 
-atualizarRPM(6000)
+
+function atualizarEspiras(valor){
+
+    const display = document.getElementById("coil-display");
+    const group = document.getElementById("coil-group");
+
+    display.textContent = valor;
+
+    group.innerHTML = "";
+
+    const slots = 12;
+
+    const espirasPorSlot = Math.max(
+        1,
+        Math.floor(valor / 15)
+    );
+
+    for(let slot = 0; slot < slots; slot++){
+
+        const angulo = (slot * 360 / slots) * Math.PI / 180;
+
+        const centroX = 150 + Math.cos(angulo) * 72;
+        const centroY = 150 + Math.sin(angulo) * 72;
+
+        for(let e = 0; e < espirasPorSlot; e++){
+
+            const offset = e * 4;
+
+            const bobina = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "rect"
+            );
+
+            bobina.setAttribute(
+                "x",
+                centroX - 10 + offset/2
+            );
+
+            bobina.setAttribute(
+                "y",
+                centroY - 14 + offset/2
+            );
+
+            bobina.setAttribute(
+                "width",
+                20 - offset
+            );
+
+            bobina.setAttribute(
+                "height",
+                28 - offset
+            );
+
+            bobina.setAttribute(
+                "rx",
+                3
+            );
+
+            bobina.setAttribute(
+                "class",
+                "coil-slot"
+            );
+
+            bobina.setAttribute(
+                "transform",
+                `rotate(${slot*30} ${centroX} ${centroY})`
+            );
+
+            group.appendChild(bobina);
+        }
+    }
+}
+window.addEventListener("load", atualizarEspiras(100));

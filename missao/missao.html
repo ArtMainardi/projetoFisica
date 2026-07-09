@@ -15,11 +15,6 @@
     <link rel="stylesheet" href="css/mission-responsive.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/background.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <link rel="stylesheet" href="/css/map.css">
-    <link rel="stylesheet" href="/css/pins.css">
-    <link rel="stylesheet" href="/css/sidebar.css">
-    <link rel="stylesheet" href="/css/responsive.css">
 </head>
 <body>
     <div class="sun"></div>
@@ -37,7 +32,7 @@
 
     <div class="flags">🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻</div>
 
-    <div class="train">🚂━━━━━━━━━━━━━━━━━━━━━━</div>
+    <div class="train">🚂-🚃-🚃-🚃-🚃-🚃-🚃-🚃-🚃-🚃-🚃-🚃</div>
 
     <main class="mission-dashboard">
 
@@ -148,8 +143,34 @@
                 </div>
 
                 <div class="widget coil-widget">
+
                     <h3>Espiras</h3>
+
+                    <div class="coil-view">
+
+                        <svg id="coil-svg" viewBox="0 0 300 300">
+
+                            <!-- Estator -->
+                            <circle cx="150" cy="150" r="120" class="stator-body"/>
+
+                            <!-- Região interna -->
+                            <circle cx="150" cy="150" r="90" class="stator-hole"/>
+
+                            <!-- Grupo das bobinas -->
+                            <g id="coil-group"></g>
+
+                            <!-- Rotor -->
+                            <circle cx="150" cy="150" r="45" class="rotor-core"/>
+
+                            <!-- Eixo -->
+                            <circle cx="150" cy="150" r="12" class="shaft-core"/>
+
+                        </svg>
+
+                    </div>
+
                     <div id="coil-display">0</div>
+
                 </div>
 
             </div>

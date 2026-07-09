@@ -106,3 +106,42 @@
     text-align:center;
     color:#776c62;
 }
+.coil-view{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0 15px;
+}
+
+#coil-svg{
+    width:210px;
+    height:210px;
+}
+
+.stator-body{
+    fill:#7aa6d8;
+    stroke:#4f685d;
+    stroke-width:8;
+}
+
+.stator-hole{
+    fill:#eef6ff;
+    stroke:#5f7d99;
+    stroke-width:4;
+}
+
+.rotor-core{
+    fill:#6fae88;
+    stroke:#4f685d;
+    stroke-width:4;
+}
+
+.shaft-core{
+    fill:#666;
+}
+
+.coil-slot{
+    fill:#ffb46a;
+    stroke:#cf8840;
+    stroke-width:2;
+}

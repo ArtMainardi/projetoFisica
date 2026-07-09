@@ -155,6 +155,7 @@ body::after{
 }
 
 .train{
+    letter-spacing: -10px;
     position:fixed;
     bottom:15px;
     right:-500px;
