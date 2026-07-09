@@ -1,3 +1,10 @@
+const currentValue = document.getElementById("current-value");
+const turnsValue = document.getElementById("turns-value");
+const fieldValue = document.getElementById("field-value");
+const resistanceValue = document.getElementById("resistance-value");
+
+
+
 function atualizarRPM(valor){
     const rpmDisplay = document.getElementById("rpm-display");
     const rotor = document.getElementById("rpm-rotor");
@@ -77,14 +84,10 @@ window.addEventListener("load", atualizarEspiras(0));
 
 
 function atualizarValoresPainel(){
-    document.getElementById("current-value").textContent =
-        `${current.value} A`;
-    document.getElementById("turns-value").textContent =
-        turns.value;
-    document.getElementById("field-value").textContent =
-        `${field.value} T`;
-    document.getElementById("resistance-value").textContent =
-        `${resistance.value} Ω`;
+    currentValue.value = current.value;
+    turnsValue.value = turns.value;
+    fieldValue.value = field.value;
+    resistanceValue.value = resistance.value;
 }
 
 const current = document.getElementById("current");
@@ -172,8 +175,8 @@ function atualizarSimulacao(){
     );
 }
 current.addEventListener("input",()=>{
-    document.getElementById("current-value").textContent =
-        `${current.value} A`;
+    document.getElementById("current-value").value =
+    current.value;
 
     atualizarSimulacao();
 });
@@ -182,8 +185,8 @@ turns.addEventListener("input",()=>{
     atualizarEspiras(
         Number(turns.value)
     );
-    document.getElementById("turns-value").textContent =
-        turns.value;
+    document.getElementById("turns-value").value =
+    turns.value;
 
     atualizarSimulacao();
 });
@@ -192,15 +195,15 @@ field.addEventListener("input",()=>{
     atualizarCampoMagnetico(
         Number(field.value)
     );
-    document.getElementById("field-value").textContent =
-        `${field.value} T`;
+    document.getElementById("field-value").value =
+    field.value;
 
     atualizarSimulacao();
 });
 
 resistance.addEventListener("input",()=>{
-    document.getElementById("resistance-value").textContent =
-        `${resistance.value} Ω`;
+    document.getElementById("resistance-value").value =
+    resistance.value;
 
     atualizarSimulacao();
 });

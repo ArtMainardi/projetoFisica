@@ -55,3 +55,27 @@
 .slider-group input[type="range"]{
     width:100%;
 }
+
+.slider-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.slider-header input{
+    width:85px;
+    padding:6px 8px;
+    border:2px solid #d8c7aa;
+    border-radius:10px;
+    background:white;
+    text-align:center;
+    font-weight:bold;
+    color:#4f685d;
+}
+
+.slider-header input:focus{
+    outline:none;
+    border-color:#82c59f;
+    box-shadow:0 0 0 4px rgba(130,197,159,.2);
+}

@@ -141,7 +141,7 @@
                     <div class="slider-group">
                         <div class="slider-header">
                             <label for="current">Corrente (I)</label>
-                            <span id="current-value">0 A</span>
+                            <input id="current-value" type="number" min="0" max="20" value="0">
                         </div>
                         <input type="range" id="current" min="0" max="20" value="0">
                     </div>
@@ -149,7 +149,7 @@
                     <div class="slider-group">
                         <div class="slider-header">
                             <label for="turns">Espiras (N)</label>
-                            <span id="turns-value">0</span>
+                            <input id="turns-value" type="number" min="0" max="150" value="0">
                         </div>
                         <input type="range" id="turns" min="0" max="150" value="0">
                     </div>
@@ -157,7 +157,7 @@
                     <div class="slider-group">
                         <div class="slider-header">
                             <label for="field">Campo Magnético (B)</label>
-                            <span id="field-value">0 T</span>
+                            <input id="field-value" type="number" min="0" max="2" step="0.1" value="0">
                         </div>
                         <input type="range" id="field" min="0" max="2" step="0.1" value="0">
                     </div>
@@ -165,7 +165,7 @@
                     <div class="slider-group">
                         <div class="slider-header">
                             <label for="resistance">Resistência (R)</label>
-                            <span id="resistance-value">0 Ω</span>
+                            <input id="resistance-value" type="number" min="0" max="100" value="0">
                         </div>
                         <input type="range" id="resistance" min="0" max="100" value="0">
                     </div>
