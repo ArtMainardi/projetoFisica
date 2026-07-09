@@ -1,0 +1,97 @@
+.map-pin{
+    position:absolute;
+    width:28px;
+    height:28px;
+    border:none;
+    border-radius:50%;
+    background:#fff7ea;
+    border:2px solid #f08a5d;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:transparent;
+    font-size:0;
+    z-index:10;
+    overflow:visible;
+    transition:all .3s ease;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+
+.map-pin::before{
+    content:"";
+    position:absolute;
+    inset:-8px;
+    border-radius:50%;
+    border:2px solid rgba(240,138,93,.45);
+    animation:pulse 2s infinite;
+}
+
+.map-pin::after{
+    content:"!";
+    position:absolute;
+    width:18px;
+    height:18px;
+    top:-5px;
+    right:-5px;
+    background:#ee7c7c;
+    color:white;
+    border-radius:50%;
+    font-size:11px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 5px rgba(0,0,0,.15);
+}
+
+.map-pin:hover{
+    width:58px;
+    height:58px;
+    margin-left:-15px;
+    margin-top:-15px;
+    background:#f08a5d;
+    color:white;
+    font-size:28px;
+    transform:scale(1.1) rotate(0deg);
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+}
+
+.map-pin:hover::before{
+    animation:none;
+}
+
+.pin-chiesetta{
+    top:67%;
+    left:48%;
+    transform:rotate(-8deg);
+}
+
+.pin-viaverde{
+    top:40%;
+    left:59%;
+    transform:rotate(6deg);
+}
+
+.pin-scar{
+    top:35%;
+    left:41%;
+    transform:rotate(-5deg);
+}
+
+.pin-rodoviaria{
+    top:41.5%;
+    left:45.3%;
+    transform:rotate(9deg);
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        opacity:1;
+    }
+    100%{
+        transform:scale(2);
+        opacity:0;
+    }
+}

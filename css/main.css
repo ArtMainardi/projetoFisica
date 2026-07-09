@@ -1,0 +1,13 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Trebuchet MS',sans-serif;
+    background:#efe7d5;
+    overflow-x:hidden;
+    position:relative;
+}

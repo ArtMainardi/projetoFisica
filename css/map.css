@@ -1,0 +1,52 @@
+.map-dashboard{
+    width:90%;
+    max-width:1500px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 420px;
+    gap:30px;
+    padding-bottom:40px;
+}
+
+.map-frame{
+    background:#fff8ee;
+    padding:25px;
+    border-radius:30px;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    position:relative;
+    transform:rotate(-0.7deg);
+}
+
+.map-frame::before{
+    content:"";
+    width:240px;
+    height:60px;
+    background:rgba(255,255,255,.65);
+    position:absolute;
+    top:-10px;
+    left:-40px;
+    transform:rotate(-20deg);
+}
+
+.map-label{
+    position:absolute;
+    top:-18px;
+    left:200px;
+    background:#f7d0a4;
+    color:#5b5047;
+    padding:10px 30px;
+    border-radius:999px;
+    font-weight:bold;
+    box-shadow:0 5px 10px rgba(0,0,0,.08);
+}
+
+.map-container{
+    position:relative;
+}
+
+.map-image{
+    width:100%;
+    display:block;
+    border-radius:20px;
+    border:8px solid #eadbc0;
+}

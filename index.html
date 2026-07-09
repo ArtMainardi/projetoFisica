@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaraguá Custom Motors - Painel Inicial</title>
-    <link rel="stylesheet" href="index-style.css"> 
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/pins.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+
+    <div class="stamp-jaragua">150 ANOS</div>
+
+    <div class="stamp-engineering">ENGENHARIA</div>
+
+    <div class="background-mountains">
+        <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+            <path fill="#cdbfa9" d="M0 300L120 150L250 240L390 90L520 250L650 120L780 220L900 100L1000 180V300Z"/>
+        </svg>
+    </div>
 
     <header class="main-header">
         <div class="header-card">
@@ -30,58 +47,127 @@
     </div>
 
     <main class="map-dashboard">
+
         <section class="map-frame">
+
             <div class="map-label">
-                Mapa das Missões
+                🗺️ Mapa das Missões
             </div>
 
             <section class="map-container">
-                <img src="mapaJaragua.jpg"
+
+                <img
+                    src="mapaJaragua.jpg"
                     alt="Mapa de Jaraguá do Sul"
-                    class="map-image">
+                    class="map-image"
+                >
 
-                <button class="map-pin pin-chiesetta" onclick="selecionarMissao(1)">
-                    <span>⛪</span>
+                <button
+                    class="map-pin pin-chiesetta"
+                    onclick="selecionarMissao(1)"
+                    aria-label="Chiesetta Alpina"
+                    title="Chiesetta Alpina"
+                >
+                    ⛪
                 </button>
 
-                <button class="map-pin pin-viaverde" onclick="selecionarMissao(2)">
-                    <span>🌳</span>
+                <button
+                    class="map-pin pin-viaverde"
+                    onclick="selecionarMissao(2)"
+                    aria-label="Parque Via Verde"
+                    title="Parque Via Verde"
+                >
+                    🌳
                 </button>
 
-                <button class="map-pin pin-scar" onclick="selecionarMissao(3)">
-                    <span>🎭</span>
+                <button
+                    class="map-pin pin-scar"
+                    onclick="selecionarMissao(3)"
+                    aria-label="Centro Cultural SCAR"
+                    title="Centro Cultural SCAR"
+                >
+                    🎭
                 </button>
 
-                <button class="map-pin pin-rodoviaria" onclick="selecionarMissao(4)">
-                    <span>🚌</span>
+                <button
+                    class="map-pin pin-rodoviaria"
+                    onclick="selecionarMissao(4)"
+                    aria-label="Terminal Rodoviário"
+                    title="Terminal Rodoviário"
+                >
+                    🚌
                 </button>
+
             </section>
+
         </section>
 
-        <section class="info-sidebar" id="sidebar-missao">
+        <aside
+            class="info-sidebar"
+            id="sidebar-missao"
+        >
+
             <div id="conteudo-vazio">
+
                 <div class="robot-helper">
                     🤖
                 </div>
+
                 <h3>Bem-vindo, Engenheiro!</h3>
+
                 <p>
                     A cidade precisa de você para concluir
                     quatro contratos especiais de aniversário.
                 </p>
 
+                <p style="margin-top:15px;">
+                    Explore o mapa e descubra os desafios
+                    de engenharia espalhados por Jaraguá do Sul.
+                </p>
+
             </div>
-            
-            <div id="conteudo-missao" style="display: none;">
-                <h3 id="sidebar-titulo">Nome da Missão</h3>
-                <img id="sidebar-imagem" src="" alt="Local">
-                <p id="sidebar-desafio" class="tag-physics">Desafio: </p>
-                <p id="sidebar-descricao">Descrição do problema...</p>
-                
-                <a href="#" id="sidebar-botao" class="btn-contract">Iniciar Simulação</a>
+
+            <div
+                id="conteudo-missao"
+                style="display:none;"
+            >
+
+                <h3 id="sidebar-titulo">
+                    Nome da Missão
+                </h3>
+
+                <img
+                    id="sidebar-imagem"
+                    src=""
+                    alt="Local da missão"
+                >
+
+                <p
+                    id="sidebar-desafio"
+                    class="tag-physics"
+                >
+                    Desafio:
+                </p>
+
+                <p id="sidebar-descricao">
+                    Descrição do problema...
+                </p>
+
+                <a
+                    href="#"
+                    id="sidebar-botao"
+                    class="btn-contract"
+                >
+                    Iniciar Simulação
+                </a>
+
             </div>
-        </section>
+
+        </aside>
+
     </main>
 
     <script src="index-script.js"></script>
+
 </body>
 </html>
