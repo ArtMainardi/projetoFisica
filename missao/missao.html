@@ -138,8 +138,32 @@
 
                 </div>
 
-                <div class="widget motor-widget">
-                    <img src="img/motor.png">
+                <div class="widget magnetic-widget">
+
+                    <h3>🧲 Campo Magnético</h3>
+
+                    <div class="magnetic-view">
+
+                        <svg id="magnetic-svg" viewBox="0 0 500 250">
+
+                            <rect x="40" y="70" width="80" height="110" rx="12" class="pole-n"/>
+                            <text x="80" y="135" class="pole-text">N</text>
+
+                            <rect x="380" y="70" width="80" height="110" rx="12" class="pole-s"/>
+                            <text x="420" y="135" class="pole-text">S</text>
+
+                            <circle cx="250" cy="125" r="45" class="magnetic-rotor"/>
+
+                            <g id="field-lines"></g>
+
+                        </svg>
+
+                    </div>
+
+                    <div id="field-display">
+                        0 T
+                    </div>
+
                 </div>
 
                 <div class="widget coil-widget">

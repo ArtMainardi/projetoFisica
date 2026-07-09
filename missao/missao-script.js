@@ -97,3 +97,49 @@ const resistance = document.getElementById("resistance");
 });
 
 window.addEventListener("load", atualizarValoresPainel());
+
+
+function atualizarCampoMagnetico(valor){
+    const group = document.getElementById("field-lines");
+    const display = document.getElementById("field-display");
+    display.textContent = `${valor} T`;
+    group.innerHTML = "";
+
+    const quantidadeLinhas = Math.max(
+        1,
+        Math.round(valor * 5)
+    );
+
+    for(let i = 0; i < quantidadeLinhas; i++){
+        const offset = (i - (quantidadeLinhas - 1)/2) * 18;
+        const linha = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "path"
+        );
+        linha.setAttribute(
+            "d",
+            `
+            M120 ${125 + offset}
+            Q250 ${85 + offset}
+            380 ${125 + offset}
+            `
+        );
+        linha.setAttribute(
+            "class",
+            "field-line"
+        );
+        linha.style.opacity =
+            0.3 + valor * 0.4;
+        linha.style.strokeWidth =
+            2 + valor * 2;
+        group.appendChild(linha);
+    }
+}
+
+field.addEventListener("input",()=>{
+    atualizarCampoMagnetico(
+        Number(field.value)
+    );
+});
+
+window.addEventListener("load", atualizarCampoMagnetico(0));

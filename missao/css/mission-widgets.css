@@ -145,3 +145,61 @@
     stroke:#cf8840;
     stroke-width:2;
 }
+
+.magnetic-widget{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.magnetic-view{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0;
+}
+
+#magnetic-svg{
+    width:100%;
+    max-width:320px;
+}
+
+.pole-n{
+    fill:#82b9f3;
+    stroke:#4f685d;
+    stroke-width:3;
+}
+
+.pole-s{
+    fill:#f58e8e;
+    stroke:#4f685d;
+    stroke-width:3;
+}
+
+.pole-text{
+    font-size:42px;
+    font-weight:bold;
+    fill:white;
+    text-anchor:middle;
+    dominant-baseline:middle;
+}
+
+.magnetic-rotor{
+    fill:#6fae88;
+    stroke:#4f685d;
+    stroke-width:4;
+}
+
+.field-line{
+    fill:none;
+    stroke:#6da9ff;
+    stroke-width:3;
+    opacity:.7;
+}
+
+#field-display{
+    font-size:2rem;
+    font-weight:bold;
+    color:#4f685d;
+}
