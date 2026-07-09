@@ -172,6 +172,7 @@ function atualizarSimulacao(){
 
     atualizarRPM(resultado.rpm);
     atualizarTorque(resultado.torque);
+    atualizarPotencia(resultado.potenciaEletrica, resultado.potenciaDissipada, resultado.potenciaMecanica);
 }
 current.addEventListener("input",()=>{
     document.getElementById("current-value").value =
@@ -250,4 +251,27 @@ function atualizarTorque(torque){
         (-90) + (180 * percentual);
     ponteiro.style.transform =
         `rotate(${angulo}deg)`;
+}
+
+
+function atualizarPotencia(potenciaEntrada, potenciaPerdida, potenciaSaida){
+    document.getElementById("power-in")
+        .textContent =
+        `${potenciaEntrada.toFixed(0)} W`;
+    document.getElementById("power-loss")
+        .textContent =
+        `${potenciaPerdida.toFixed(0)} W`;
+    document.getElementById("power-out")
+        .textContent =
+        `${potenciaSaida.toFixed(0)} W`;
+    const eficiencia =
+        potenciaEntrada > 0
+        ? (potenciaSaida / potenciaEntrada) * 100
+        : 0;
+    document.getElementById("power-percent")
+        .textContent =
+        `${eficiencia.toFixed(1)}%`;
+    document.getElementById("power-efficiency-bar")
+        .style.width =
+        `${eficiencia}%`;
 }

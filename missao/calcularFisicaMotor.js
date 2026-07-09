@@ -19,6 +19,7 @@ function calcularFisicaMotor(N, I, B, R, A = .05, V = 220){
         potenciaEletrica : potenciaEletrica,
         potenciaDissipada : potenciaDissipada,
         eficiencia : eficiencia,
+        potenciaMecanica : potenciaMecanica,
         rpm : rpm
     }
 }

@@ -154,15 +154,51 @@
                                     />
                                 </svg>
                             </div>
-
                             <div id="torque-value" class="analysis-value">
                                 0.00 Nm
                             </div>
-
                         </div>
 
                         <div class="analysis-card">
-                            Potência
+                            <h3>Potência</h3>
+                            <div class="power-flow">
+                                <div class="power-box input-power">
+                                    <span>⚡</span>
+                                    <strong id="power-in">
+                                        0 W
+                                    </strong>
+                                    <small>Entrada</small>
+                                </div>
+                                <div class="flow-arrow">
+                                    ➜
+                                </div>
+                                <div class="power-box loss-power">
+                                    <span>🔥</span>
+                                    <strong id="power-loss">
+                                        0 W
+                                    </strong>
+                                    <small>Perdas</small>
+                                </div>
+                                <div class="flow-arrow">
+                                    ➜
+                                </div>
+                                <div class="power-box output-power">
+                                    <span>⚙️</span>
+                                    <strong id="power-out">
+                                        0 W
+                                    </strong>
+                                    <small>Saída</small>
+                                </div>
+                            </div>
+                            <div class="power-bar">
+                                <div
+                                    id="power-efficiency-bar"
+                                    class="power-bar-fill"
+                                ></div>
+                            </div>
+                            <div id="power-percent" class="analysis-value">
+                                0%
+                            </div>
                         </div>
 
                         <div class="analysis-card">
