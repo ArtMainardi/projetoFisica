@@ -173,6 +173,7 @@ function atualizarSimulacao(){
     atualizarRPM(resultado.rpm);
     atualizarTorque(resultado.torque);
     atualizarPotencia(resultado.potenciaEletrica, resultado.potenciaDissipada, resultado.potenciaMecanica);
+    atualizarEficiencia(resultado.eficiencia);
 }
 current.addEventListener("input",()=>{
     document.getElementById("current-value").value =
@@ -274,4 +275,60 @@ function atualizarPotencia(potenciaEntrada, potenciaPerdida, potenciaSaida){
     document.getElementById("power-efficiency-bar")
         .style.width =
         `${eficiencia}%`;
+}
+
+function atualizarEficiencia(valor){
+    const badge =
+        document.getElementById(
+            "efficiency-badge"
+        );
+    const texto =
+        document.getElementById(
+            "efficiency-value"
+        );
+    const descricao =
+        document.getElementById(
+            "efficiency-description"
+        );
+    texto.textContent =
+        `${valor.toFixed(1)}%`;
+    badge.className =
+        "efficiency-badge";
+
+    if(valor >= 90){
+        badge.classList.add("grade-a");
+        badge.textContent = "A";
+        descricao.textContent =
+            "Excelente rendimento";
+    }
+    else if(valor >= 75){
+        badge.classList.add("grade-b");
+        badge.textContent = "B";
+        descricao.textContent =
+            "Alto rendimento";
+    }
+    else if(valor >= 60){
+        badge.classList.add("grade-c");
+        badge.textContent = "C";
+        descricao.textContent =
+            "Bom rendimento";
+    }
+    else if(valor >= 45){
+        badge.classList.add("grade-d");
+        badge.textContent = "D";
+        descricao.textContent =
+            "Rendimento moderado";
+    }
+    else if(valor >= 25){
+        badge.classList.add("grade-e");
+        badge.textContent = "E";
+        descricao.textContent =
+            "Baixo rendimento";
+    }
+    else{
+        badge.classList.add("grade-f");
+        badge.textContent = "F";
+        descricao.textContent =
+            "Motor ineficiente";
+    }
 }

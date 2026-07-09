@@ -216,3 +216,58 @@
     );
     transition:.5s;
 }
+
+.efficiency-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.efficiency-badge{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    font-weight:bold;
+    color:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.grade-a{
+    background:#4caf50;
+}
+
+.grade-b{
+    background:#8bc34a;
+}
+
+.grade-c{
+    background:#cddc39;
+    color:#444;
+}
+
+.grade-d{
+    background:#ffc107;
+    color:#444;
+}
+
+.grade-e{
+    background:#ff9800;
+}
+
+.grade-f{
+    background:#f44336;
+}
+
+.efficiency-description{
+    color:#5f564f;
+    font-weight:bold;
+    text-align:center;
+}
