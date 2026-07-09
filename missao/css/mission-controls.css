@@ -1,0 +1,27 @@
+.control-panel{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px;
+    border:4px solid #eadbc0;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+#finish-btn{
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#ffb37b,#ff8d76);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    margin-bottom:25px;
+}
+
+.slider-group{
+    background:white;
+    padding:18px;
+    border-radius:20px;
+    margin-bottom:18px;
+    box-shadow:0 5px 12px rgba(0,0,0,.06);
+}

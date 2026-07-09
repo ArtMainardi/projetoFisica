@@ -1,0 +1,39 @@
+.mission-header{
+    margin-bottom:25px;
+}
+
+.mission-header-card{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px 35px;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    border:4px solid #eadbc0;
+    position:relative;
+}
+
+.mission-header-card::before{
+    content:"📜";
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:42px;
+}
+
+.mission-badge{
+    display:inline-block;
+    background:#ffb37b;
+    color:white;
+    padding:8px 18px;
+    border-radius:999px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.mission-header-card h1{
+    color:#4f685d;
+    font-size:2.5rem;
+}
+
+.mission-header-card p{
+    color:#776c62;
+}

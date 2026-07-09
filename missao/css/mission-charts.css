@@ -1,0 +1,22 @@
+.charts-section{
+    margin-top:30px;
+}
+
+.chart-card{
+    background:#fff8ee;
+    border-radius:35px;
+    min-height:500px;
+    padding:25px;
+    border:5px solid #eadbc0;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.gear-decoration{
+    position:absolute;
+    font-size:250px;
+    opacity:.08;
+    right:30px;
+    bottom:0;
+}
