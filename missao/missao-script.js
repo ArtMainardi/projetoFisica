@@ -135,11 +135,20 @@ function atualizarCampoMagnetico(valor){
         group.appendChild(linha);
     }
 }
+window.addEventListener("load", atualizarCampoMagnetico(0));
+
+turns.addEventListener("input",()=>{
+    atualizarEspiras(
+        Number(turns.value)
+    );
+    document.getElementById("turns-value").textContent =
+        turns.value;
+});
 
 field.addEventListener("input",()=>{
     atualizarCampoMagnetico(
         Number(field.value)
     );
+    document.getElementById("field-value").textContent =
+        `${field.value} T`;
 });
-
-window.addEventListener("load", atualizarCampoMagnetico(0));
