@@ -87,8 +87,60 @@
             <div class="top-widgets">
 
                 <div class="widget rpm-widget">
+                                    
                     <h3>RPM</h3>
+
+                    <div class="rpm-motor-container">
+
+                        <svg class="front-motor" viewBox="0 0 400 400">
+
+                            <!-- Corpo externo -->
+
+                            <circle cx="200" cy="200" r="150" class="motor-ring"/>
+
+                            <circle cx="200" cy="200" r="125" class="motor-inner"/>
+
+                            <!-- Parafusos -->
+
+                            <circle cx="200" cy="80" r="8" class="motor-bolt"/>
+                            <circle cx="320" cy="200" r="8" class="motor-bolt"/>
+                            <circle cx="200" cy="320" r="8" class="motor-bolt"/>
+                            <circle cx="80" cy="200" r="8" class="motor-bolt"/>
+
+                            <!-- Aletas -->
+
+                            <g class="motor-fins">
+                                <line x1="200" y1="90" x2="200" y2="130"/>
+                                <line x1="310" y1="200" x2="270" y2="200"/>
+                                <line x1="200" y1="310" x2="200" y2="270"/>
+                                <line x1="90" y1="200" x2="130" y2="200"/>
+
+                                <line x1="120" y1="120" x2="145" y2="145"/>
+                                <line x1="280" y1="120" x2="255" y2="145"/>
+                                <line x1="120" y1="280" x2="145" y2="255"/>
+                                <line x1="280" y1="280" x2="255" y2="255"/>
+                            </g>
+
+                            <!-- Rotor giratório -->
+
+                            <g id="rpm-rotor">
+
+                                <ellipse cx="200" cy="120" rx="22" ry="70" class="blade"/>
+
+                                <circle cx="200" cy="200" r="32" class="rotor-center"/>
+
+                            </g>
+
+                        </svg>
+
+                    </div>
+
                     <div id="rpm-display">0</div>
+
+                    <p class="rpm-label">
+                        Velocidade Atual
+                    </p>
+
                 </div>
 
                 <div class="widget motor-widget">
@@ -157,6 +209,7 @@
 
     </section>
 
-</main>
+    </main>
+    <script src="missao-script.js"></script>
 </body>
 </html>

@@ -36,3 +36,73 @@
     max-height:130px;
     object-fit:contain;
 }
+.rpm-motor-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0;
+}
+
+.front-motor{
+    width:130px;
+    height:130px;
+}
+
+.motor-ring{
+    fill:#7aa6d8;
+    stroke:#4f685d;
+    stroke-width:8;
+}
+
+.motor-inner{
+    fill:#8bb6e4;
+    stroke:#5f7d99;
+    stroke-width:4;
+}
+
+.motor-bolt{
+    fill:#4f685d;
+}
+
+.motor-fins line{
+    stroke:#5f7d99;
+    stroke-width:4;
+}
+
+.blade{
+    fill:#ffffff;
+    stroke:#bdbdbd;
+    stroke-width:3;
+    filter:drop-shadow(2px 2px 2px rgba(0,0,0,.15));
+}
+
+.rotor-center{
+    fill:#666;
+}
+
+#rpm-rotor{
+    transform-origin:200px 200px;
+    animation:rpmSpin 2s linear infinite;
+}
+
+@keyframes rpmSpin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+#rpm-display{
+    font-size:2.8rem;
+    font-weight:bold;
+    color:#4f685d;
+    text-align:center;
+}
+
+.rpm-label{
+    text-align:center;
+    color:#776c62;
+}
