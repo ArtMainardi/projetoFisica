@@ -1,9 +1,10 @@
 .info-sidebar{
+    width: 22vw;
     background:
         linear-gradient(
         180deg,
         #fffefb,
-        #fff7e8
+        #fff1dd
         );
     border-radius:30px;
     padding:25px;
@@ -58,7 +59,7 @@
 }
 
 #sidebar-imagem{
-    width:100%;
+    width:85%;
     border-radius:20px;
     border:6px solid #eadbc0;
     margin-bottom:15px;
