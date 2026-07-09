@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjetoFinalSA</title>
+    <title>Jaraguá Custom Motors - Painel Inicial</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/pins.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    
+
+    <div class="sun"></div>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+
+    <div class="stamp-jaragua">150 ANOS</div>
+
+    <div class="stamp-engineering">ENGENHARIA</div>
+
+    <div class="background-mountains">
+        <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+            <path fill="#92d0a7" d="M0 300L120 150L250 240L390 90L520 250L650 120L780 220L900 100L1000 180V300Z"/>
+            <path fill="#76be90" d="M0 300L100 200L230 270L350 120L500 270L650 160L780 250L910 140L1000 220V300Z"/>
+        </svg>
+    </div>
+
+    <div class="flags">🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻</div>
+
+    <div class="train">🚂━━━━━━━━━━━━━━━━━━━━━━</div>
+
+    <header class="main-header">
+        <div class="header-card">
+            <h1>Jaraguá Custom Motors</h1>
+            <p>Diário de Engenharia • Especial Aniversário da Cidade</p>
+        </div>
+    </header>
+
+    <div class="city-banner">
+        <div class="banner-left">🎂 150 Anos de Jaraguá do Sul</div>
+        <div class="banner-progress">
+            <div class="progress-fill"></div>
+        </div>
+        <div class="banner-right">0/4 Contratos Concluídos</div>
+    </div>
+
+    <main class="map-dashboard">
+        <section class="map-frame">
+            <div class="map-label">🗺️ Mapa das Missões</div>
+            <section class="map-container">
+                <img src="mapaJaragua.jpg" alt="Mapa de Jaraguá do Sul" class="map-image">
+                <button class="map-pin pin-chiesetta" onclick="selecionarMissao(1)" aria-label="Chiesetta Alpina" title="Chiesetta Alpina">⛪</button>
+                <button class="map-pin pin-viaverde" onclick="selecionarMissao(2)" aria-label="Parque Via Verde" title="Parque Via Verde">🌳</button>
+                <button class="map-pin pin-scar" onclick="selecionarMissao(3)" aria-label="Centro Cultural SCAR" title="Centro Cultural SCAR">🎭</button>
+                <button class="map-pin pin-rodoviaria" onclick="selecionarMissao(4)" aria-label="Terminal Rodoviário" title="Terminal Rodoviário">🚌</button>
+            </section>
+        </section>
+
+        <aside class="info-sidebar" id="sidebar-missao">
+            <div id="conteudo-vazio">
+                <div class="robot-helper">🤖</div>
+                <h3>Bem-vindo, Engenheiro!</h3>
+                <p>
+                    A cidade precisa de você para concluir
+                    quatro contratos especiais de aniversário.
+                </p>
+                <p style="margin-top:15px;">
+                    Explore o mapa e descubra os desafios
+                    de engenharia espalhados por Jaraguá do Sul.
+                </p>
+            </div>
+
+            <div id="conteudo-missao" style="display:none;">
+                <h3 id="sidebar-titulo">Nome da Missão</h3>
+                <img id="sidebar-imagem" src="" alt="Local da missão">
+                <p id="sidebar-desafio" class="tag-physics">Desafio:</p>
+                <p id="sidebar-descricao">Descrição do problema...</p>
+                <a href="#" id="sidebar-botao" class="btn-contract">Iniciar Simulação</a>
+            </div>
+        </aside>
+    </main>
+
+    <script src="index-script.js"></script>
+
 </body>
 </html>

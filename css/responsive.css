@@ -1,0 +1,21 @@
+@media(max-width:1100px){
+    .map-dashboard{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+    .header-card h1{
+        font-size:2rem;
+    }
+
+    .city-banner{
+        flex-direction:column;
+    }
+
+    .map-pin{
+        width:50px;
+        height:50px;
+        font-size:24px;
+    }
+}
