@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão</title>
+    <link rel="stylesheet" href="missao/missao-style.css"></link>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/background.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/map.css">
+    <link rel="stylesheet" href="/css/pins.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <div class="sun"></div>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+
+    <div class="background-mountains">
+        <svg viewBox="0 0 1000 300" preserveAspectRatio="none">
+            <path fill="#92d0a7" d="M0 300L120 150L250 240L390 90L520 250L650 120L780 220L900 100L1000 180V300Z"/>
+            <path fill="#76be90" d="M0 300L100 200L230 270L350 120L500 270L650 160L780 250L910 140L1000 220V300Z"/>
+        </svg>
+    </div>
+
+    <div class="flags">🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻🔺🔻</div>
+
+    <div class="train">🚂━━━━━━━━━━━━━━━━━━━━━━</div>
+
+    <main class="mission-dashboard">
+
+    <section class="mission-header">
+        <h1 id="mission-title">Contrato #01 - Chiesetta Alpina</h1>
+    </section>
+
+    <section class="mission-layout">
+
+        <aside class="mission-panel">
+
+            <div class="mission-card">
+                <h2>Objetivo</h2>
+                <div id="mission-requirements"></div>
+            </div>
+
+            <div class="location-card">
+                <img id="mission-image" src="">
+            </div>
+
+        </aside>
+
+        <section class="simulation-area">
+
+            <div class="top-widgets">
+
+                <div class="widget rpm-widget">
+                    <h3>RPM</h3>
+                    <div id="rpm-display">0</div>
+                </div>
+
+                <div class="widget motor-widget">
+                    <img src="img/motor.png">
+                </div>
+
+                <div class="widget coil-widget">
+                    <h3>Espiras</h3>
+                    <div id="coil-display">0</div>
+                </div>
+
+            </div>
+
+            <div class="motor-stage">
+
+                <div class="gear-decoration">⚙️</div>
+
+                <div id="motor-visual">
+                    <img src="img/motor.png" alt="Motor" style="max-width:350px;width:100%;">
+                </div>
+
+            </div>
+
+        </section>
+
+        <aside class="control-panel">
+
+            <button id="finish-btn">
+                Finalizar Missão
+            </button>
+
+            <div class="slider-group">
+                <label>Corrente (I)</label>
+                <input type="range" id="current">
+            </div>
+
+            <div class="slider-group">
+                <label>Espiras (N)</label>
+                <input type="range" id="turns">
+            </div>
+
+            <div class="slider-group">
+                <label>Campo Magnético (B)</label>
+                <input type="range" id="field">
+            </div>
+
+            <div class="slider-group">
+                <label>Resistência (R)</label>
+                <input type="range" id="resistance">
+            </div>
+
+        </aside>
+
+    </section>
+
+    <section class="charts-section">
+
+        <div class="chart-card">
+            <canvas id="chart-performance"></canvas>
+        </div>
+
+    </section>
+
+</main>
+</body>
+</html>

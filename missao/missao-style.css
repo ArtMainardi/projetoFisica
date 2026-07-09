@@ -1,0 +1,267 @@
+/* missao-style.css */
+
+.mission-dashboard{
+    width:95%;
+    max-width:1700px;
+    margin:auto;
+    padding:30px 0 50px;
+    position:relative;
+    z-index:2;
+}
+
+.mission-header{
+    margin-bottom:25px;
+}
+
+.mission-header-card{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px 35px;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    border:4px solid #eadbc0;
+    position:relative;
+    transform:rotate(-0.5deg);
+}
+
+.mission-badge{
+    display:inline-block;
+    background:#ffb37b;
+    color:white;
+    padding:8px 18px;
+    border-radius:999px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.mission-header-card h1{
+    color:#4f685d;
+    font-size:2.5rem;
+    margin-bottom:5px;
+}
+
+.mission-header-card p{
+    color:#776c62;
+}
+
+.mission-layout{
+    display:grid;
+    grid-template-columns:320px 1fr 320px;
+    gap:30px;
+    align-items:start;
+}
+
+.mission-panel{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px;
+    border:4px dashed #e8d8bd;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.mission-panel::before{
+    content:"REQUISITOS";
+    position:absolute;
+    top:-12px;
+    right:-15px;
+    background:#fff8ee;
+    color:#d46b6b;
+    border:3px solid #d46b6b;
+    padding:6px 14px;
+    border-radius:15px;
+    transform:rotate(8deg);
+    font-weight:bold;
+}
+
+.mission-card{
+    margin-bottom:25px;
+}
+
+.mission-card h2{
+    color:#4f685d;
+    margin-bottom:15px;
+}
+
+#mission-requirements{
+    line-height:1.8;
+    color:#5f564f;
+}
+
+.location-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    border:5px solid #eadbc0;
+}
+
+#mission-image{
+    width:100%;
+    display:block;
+}
+
+.simulation-area{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.top-widgets{
+    display:grid;
+    grid-template-columns:220px 1fr 220px;
+    gap:20px;
+}
+
+.widget{
+    background:#fff8ee;
+    border-radius:25px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    border:4px solid #eadbc0;
+}
+
+.widget h3{
+    color:#4f685d;
+    margin-bottom:10px;
+}
+
+#rpm-display,
+#coil-display{
+    font-size:3rem;
+    font-weight:bold;
+    color:#4f685d;
+}
+
+.motor-widget img{
+    width:100%;
+    max-height:130px;
+    object-fit:contain;
+}
+
+.motor-stage{
+    background:
+    radial-gradient(
+        circle,
+        #ffffff,
+        #fff4e5
+    );
+
+    border-radius:35px;
+    min-height:500px;
+    border:5px solid #eadbc0;
+    box-shadow:
+    inset 0 0 30px rgba(0,0,0,.05),
+    0 15px 30px rgba(0,0,0,.08);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.gear-decoration{
+    position:absolute;
+    font-size:250px;
+    opacity:.08;
+    animation:gearRotate 20s linear infinite;
+}
+
+@keyframes gearRotate{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.control-panel{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px;
+    border:4px solid #eadbc0;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+}
+
+#finish-btn{
+    width:100%;
+    border:none;
+    padding:18px;
+    border-radius:20px;
+    background:
+    linear-gradient(
+        135deg,
+        #ffb37b,
+        #ff8d76
+    );
+
+    color:white;
+    font-weight:bold;
+    font-size:1.1rem;
+    cursor:pointer;
+    margin-bottom:25px;
+    transition:.3s;
+}
+
+#finish-btn:hover{
+    transform:scale(1.03);
+}
+
+.slider-group{
+    background:white;
+    padding:18px;
+    border-radius:20px;
+    margin-bottom:18px;
+    box-shadow:0 5px 12px rgba(0,0,0,.06);
+}
+
+.slider-group label{
+    display:block;
+    margin-bottom:10px;
+    color:#4f685d;
+    font-weight:bold;
+}
+
+.slider-group input{
+    width:100%;
+}
+
+.charts-section{
+    margin-top:30px;
+}
+
+.chart-card{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px;
+    border:4px solid #eadbc0;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    min-height:350px;
+}
+
+@media(max-width:1300px){
+    .mission-layout{
+        grid-template-columns:280px 1fr;
+    }
+
+    .control-panel{
+        grid-column:1/3;
+    }
+}
+
+@media(max-width:900px){
+    .mission-layout{
+        grid-template-columns:1fr;
+    }
+
+    .top-widgets{
+        grid-template-columns:1fr;
+    }
+
+    .control-panel{
+        grid-column:auto;
+    }
+}
