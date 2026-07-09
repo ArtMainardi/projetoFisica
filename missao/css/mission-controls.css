@@ -25,3 +25,33 @@
     margin-bottom:18px;
     box-shadow:0 5px 12px rgba(0,0,0,.06);
 }
+
+.slider-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.slider-header label{
+    color:#4f685d;
+    font-weight:bold;
+}
+
+.slider-header span{
+    background:#d7f0df;
+    color:#3e6b4d;
+    padding:4px 10px;
+    border-radius:999px;
+    font-weight:bold;
+    min-width:65px;
+    text-align:center;
+}
+
+.slider-group{
+    margin-bottom:25px;
+}
+
+.slider-group input[type="range"]{
+    width:100%;
+}
