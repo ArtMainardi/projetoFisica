@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    font-family:'Trebuchet MS',sans-serif;
+    background:#efe7d5;
+    overflow-x:hidden;
+    position:relative;
+}
+
+.mission-dashboard{
+    width:95%;
+    max-width:1700px;
+    margin:auto;
+    padding:30px 0 50px;
+    position:relative;
+    z-index:2;
+}

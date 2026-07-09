@@ -1,0 +1,6 @@
+.mission-layout{
+    display:grid;
+    grid-template-columns:320px 1fr 320px;
+    gap:30px;
+    align-items:start;
+}

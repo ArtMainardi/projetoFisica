@@ -1,0 +1,89 @@
+.chart-card{
+    background:#fff8ee;
+    border-radius:35px;
+    min-height:560px;
+    border:5px solid #eadbc0;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    overflow:hidden;
+    position:relative;
+}
+
+.chart-card::before{
+    content:"CENTRO DE ANÁLISE";
+    position:absolute;
+    top:15px;
+    left:20px;
+    background:#f7d0a4;
+    color:#5b5047;
+    padding:8px 16px;
+    border-radius:999px;
+    font-weight:bold;
+    z-index:3;
+}
+
+.engineering-stage{
+    width:100%;
+    height:560px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    background:
+    linear-gradient(
+        180deg,
+        #fffdf8,
+        #fff3e2
+    );
+}
+
+.engineering-stage::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.04) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.04) 1px,
+        transparent 1px
+    );
+
+    background-size:40px 40px;
+}
+
+.stage-placeholder{
+    text-align:center;
+    max-width:500px;
+    position:relative;
+    z-index:2;
+}
+
+.stage-icon{
+    font-size:120px;
+    margin-bottom:20px;
+}
+
+.stage-placeholder h2{
+    color:#4f685d;
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.stage-placeholder p{
+    color:#776c62;
+    line-height:1.7;
+    font-size:1.1rem;
+}
+
+.chart-card::after{
+    content:"⚙️";
+    position:absolute;
+    right:30px;
+    bottom:20px;
+    font-size:220px;
+    opacity:.05;
+}

@@ -1,0 +1,205 @@
+.simulation-area{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.top-widgets{
+    display:grid;
+    grid-template-columns:220px 1fr 220px;
+    gap:20px;
+}
+
+.widget{
+    background:#fff8ee;
+    border-radius:25px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    border:4px solid #eadbc0;
+}
+
+.widget h3{
+    color:#4f685d;
+    margin-bottom:10px;
+}
+
+#rpm-display,
+#coil-display{
+    font-size:3rem;
+    font-weight:bold;
+    color:#4f685d;
+}
+
+.motor-widget img{
+    width:100%;
+    max-height:130px;
+    object-fit:contain;
+}
+.rpm-motor-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0;
+}
+
+.front-motor{
+    width:130px;
+    height:130px;
+}
+
+.motor-ring{
+    fill:#7aa6d8;
+    stroke:#4f685d;
+    stroke-width:8;
+}
+
+.motor-inner{
+    fill:#8bb6e4;
+    stroke:#5f7d99;
+    stroke-width:4;
+}
+
+.motor-bolt{
+    fill:#4f685d;
+}
+
+.motor-fins line{
+    stroke:#5f7d99;
+    stroke-width:4;
+}
+
+.blade{
+    fill:#ffffff;
+    stroke:#bdbdbd;
+    stroke-width:3;
+    filter:drop-shadow(2px 2px 2px rgba(0,0,0,.15));
+}
+
+.rotor-center{
+    fill:#666;
+}
+
+#rpm-rotor{
+    transform-origin:200px 200px;
+    animation:rpmSpin 2s linear infinite;
+}
+
+@keyframes rpmSpin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+#rpm-display{
+    font-size:2.8rem;
+    font-weight:bold;
+    color:#4f685d;
+    text-align:center;
+}
+
+.rpm-label{
+    text-align:center;
+    color:#776c62;
+}
+.coil-view{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0 15px;
+}
+
+#coil-svg{
+    width:210px;
+    height:210px;
+}
+
+.stator-body{
+    fill:#7aa6d8;
+    stroke:#4f685d;
+    stroke-width:8;
+}
+
+.stator-hole{
+    fill:#eef6ff;
+    stroke:#5f7d99;
+    stroke-width:4;
+}
+
+.rotor-core{
+    fill:#6fae88;
+    stroke:#4f685d;
+    stroke-width:4;
+}
+
+.shaft-core{
+    fill:#666;
+}
+
+.coil-slot{
+    fill:#ffb46a;
+    stroke:#cf8840;
+    stroke-width:2;
+}
+
+.magnetic-widget{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.magnetic-view{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px 0;
+}
+
+#magnetic-svg{
+    width:100%;
+    max-width:320px;
+}
+
+.pole-n{
+    fill:#82b9f3;
+    stroke:#4f685d;
+    stroke-width:3;
+}
+
+.pole-s{
+    fill:#f58e8e;
+    stroke:#4f685d;
+    stroke-width:3;
+}
+
+.pole-text{
+    font-size:42px;
+    font-weight:bold;
+    fill:white;
+    text-anchor:middle;
+    dominant-baseline:middle;
+}
+
+.magnetic-rotor{
+    fill:#6fae88;
+    stroke:#4f685d;
+    stroke-width:4;
+}
+
+.field-line{
+    fill:none;
+    stroke:#6da9ff;
+    stroke-width:3;
+    opacity:.7;
+}
+
+#field-display{
+    font-size:2rem;
+    font-weight:bold;
+    color:#4f685d;
+}

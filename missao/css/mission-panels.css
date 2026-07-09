@@ -1,0 +1,34 @@
+.mission-panel{
+    background:#fff8ee;
+    border-radius:30px;
+    padding:25px;
+    border:4px dashed #e8d8bd;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    position:relative;
+}
+
+.mission-panel::before{
+    content:"REQUISITOS";
+    position:absolute;
+    top:-12px;
+    right:-15px;
+    background:#fff8ee;
+    color:#d46b6b;
+    border:3px solid #d46b6b;
+    padding:6px 14px;
+    border-radius:15px;
+    transform:rotate(8deg);
+    font-weight:bold;
+}
+
+.location-card{
+    margin-top:20px;
+    overflow:hidden;
+    border-radius:20px;
+    border:5px solid #eadbc0;
+}
+
+#mission-image{
+    width:100%;
+    display:block;
+}

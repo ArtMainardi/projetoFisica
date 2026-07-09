@@ -1,0 +1,116 @@
+.mission-header{
+    margin-bottom:30px;
+    position:relative;
+}
+
+.mission-header-card{
+    background:#fff8ee;
+    border-radius:35px;
+    padding:30px 40px;
+    border:5px solid #eadbc0;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    position:relative;
+    overflow:hidden;
+    transform:rotate(-0.4deg);
+}
+
+.mission-header-card::before{
+    content:"";
+    position:absolute;
+    top:-40px;
+    right:-40px;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(255,179,123,.15);
+}
+
+.mission-header-card::after{
+    content:"⚙️";
+    position:absolute;
+    right:25px;
+    top:18px;
+    font-size:55px;
+    opacity:.35;
+    animation:gearSpin 12s linear infinite;
+}
+
+@keyframes gearSpin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.mission-badge{
+    display:inline-block;
+    background:linear-gradient(
+        135deg,
+        #ffb37b,
+        #ff8d76
+    );
+
+    color:white;
+    padding:10px 20px;
+    border-radius:999px;
+    font-weight:bold;
+    letter-spacing:1px;
+    margin-bottom:12px;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+}
+
+#mission-title{
+    color:#4f685d;
+    font-size:2.7rem;
+    margin-bottom:8px;
+}
+
+#mission-subtitle{
+    color:#776c62;
+    font-size:1rem;
+}
+
+.mission-status{
+    position:absolute;
+    right:100px;
+    bottom:25px;
+}
+
+.mission-status span{
+    background:#d7f0df;
+    color:#3e6b4d;
+    padding:10px 18px;
+    border-radius:999px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.mission-header-card .contract-stamp{
+    font-size: clamp(40px, 3vw, 60px);
+    position:absolute;
+    top:20px;
+    right:120px;
+}
+
+/* Para depois: */
+.mission-completed .mission-header-card{
+    border-color:#7bc58e;
+}
+
+.mission-completed .mission-badge{
+    background:linear-gradient(
+        135deg,
+        #7bc58e,
+        #56b978
+    );
+}
+
+.mission-completed .mission-status span{
+    background:#7bc58e;
+    color:white;
+}
