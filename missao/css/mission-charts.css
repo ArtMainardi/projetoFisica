@@ -87,3 +87,214 @@
     font-size:220px;
     opacity:.05;
 }
+
+.analysis-card{
+    background:#fffaf0;
+    border-radius:24px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.analysis-card h3{
+    color:#4f685d;
+    margin-bottom:10px;
+}
+
+.torque-gauge{
+    width:100%;
+    max-width:260px;
+    margin:auto;
+}
+
+.torque-gauge svg{
+    width:100%;
+}
+
+.gauge-bg{
+    fill:none;
+    stroke:#e6dfd0;
+    stroke-width:20;
+    stroke-linecap:round;
+}
+
+.gauge-fill{
+    fill:none;
+    stroke:#f08a5d;
+    stroke-width:20;
+    stroke-linecap:round;
+    stroke-dasharray:346;
+    stroke-dashoffset:346;
+    transition:.4s;
+}
+
+.gauge-needle{
+    stroke:#4f685d;
+    stroke-width:6;
+    stroke-linecap:round;
+    transform-origin:150px 150px;
+    transition:.4s;
+}
+
+.gauge-center{
+    fill:#4f685d;
+}
+
+.analysis-value{
+    margin-top:15px;
+    font-size:1.4rem;
+    font-weight:bold;
+    color:#4f685d;
+}
+
+.power-flow{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:nowrap;
+    width:100%;
+}
+
+.power-box{
+    width:110px;
+    min-width:110px;
+    padding:15px 10px;
+    border-radius:18px;
+}
+
+.power-box span{
+    font-size:24px;
+}
+
+.power-box strong{
+    font-size:1rem;
+}
+
+.power-box small{
+    opacity:.7;
+}
+
+.input-power{
+    background:#fff4c7;
+}
+
+.loss-power{
+    background:#ffd9d9;
+}
+
+.output-power{
+    background:#d7f0df;
+}
+
+.flow-arrow{
+    font-size:40px;
+    font-weight:bold;
+    color:#4f685d;
+}
+
+.power-bar{
+    width:100%;
+    height:24px;
+    background:#e7dfd1;
+    border-radius:999px;
+    overflow:hidden;
+    margin-top:20px;
+}
+
+.power-bar-fill{
+    width:0%;
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(
+        90deg,
+        #ffb347,
+        #82c59f
+    );
+    transition:.5s;
+}
+
+.efficiency-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.efficiency-badge{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3rem;
+    font-weight:bold;
+    color:white;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    transition:.4s;
+}
+
+.grade-a{
+    background:#4caf50;
+}
+
+.grade-b{
+    background:#8bc34a;
+}
+
+.grade-c{
+    background:#cddc39;
+    color:#444;
+}
+
+.grade-d{
+    background:#ffc107;
+    color:#444;
+}
+
+.grade-e{
+    background:#ff9800;
+}
+
+.grade-f{
+    background:#f44336;
+}
+
+.efficiency-description{
+    color:#5f564f;
+    font-weight:bold;
+    text-align:center;
+    font-size: 12px;
+}
+
+.analysis-grid{
+    display:grid;
+    grid-template-columns:1fr 1.7fr 1fr;
+    gap:25px;
+    align-items:stretch;
+}
+
+.analysis-card{
+    background:#f7f2ea;
+    border:3px solid #e3d3b5;
+    border-radius:28px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    height:auto;
+}
+
+.chart-card{
+    width:100%;
+}
+
+.engineering-stage{
+    width:100%;
+}

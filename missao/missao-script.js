@@ -1,3 +1,10 @@
+const currentValue = document.getElementById("current-value");
+const turnsValue = document.getElementById("turns-value");
+const fieldValue = document.getElementById("field-value");
+const resistanceValue = document.getElementById("resistance-value");
+
+
+
 function atualizarRPM(valor){
     const rpmDisplay = document.getElementById("rpm-display");
     const rotor = document.getElementById("rpm-rotor");
@@ -77,14 +84,10 @@ window.addEventListener("load", atualizarEspiras(0));
 
 
 function atualizarValoresPainel(){
-    document.getElementById("current-value").textContent =
-        `${current.value} A`;
-    document.getElementById("turns-value").textContent =
-        turns.value;
-    document.getElementById("field-value").textContent =
-        `${field.value} T`;
-    document.getElementById("resistance-value").textContent =
-        `${resistance.value} Ω`;
+    currentValue.value = current.value;
+    turnsValue.value = turns.value;
+    fieldValue.value = field.value;
+    resistanceValue.value = resistance.value;
 }
 
 const current = document.getElementById("current");
@@ -152,3 +155,180 @@ field.addEventListener("input",()=>{
     document.getElementById("field-value").textContent =
         `${field.value} T`;
 });
+
+
+function atualizarSimulacao(){
+    const I = Number(current.value);
+    const N = Number(turns.value);
+    const B = Number(field.value);
+    const R = Number(resistance.value);
+
+    const resultado = calcularFisicaMotor(
+        N,
+        I,
+        B,
+        R
+    );
+
+    atualizarRPM(resultado.rpm);
+    atualizarTorque(resultado.torque);
+    atualizarPotencia(resultado.potenciaEletrica, resultado.potenciaDissipada, resultado.potenciaMecanica);
+    atualizarEficiencia(resultado.eficiencia);
+}
+current.addEventListener("input",()=>{
+    document.getElementById("current-value").value =
+    current.value;
+
+    atualizarSimulacao();
+});
+
+turns.addEventListener("input",()=>{
+    atualizarEspiras(
+        Number(turns.value)
+    );
+    document.getElementById("turns-value").value =
+    turns.value;
+
+    atualizarSimulacao();
+});
+
+field.addEventListener("input",()=>{
+    atualizarCampoMagnetico(
+        Number(field.value)
+    );
+    document.getElementById("field-value").value =
+    field.value;
+
+    atualizarSimulacao();
+});
+
+resistance.addEventListener("input",()=>{
+    document.getElementById("resistance-value").value =
+    resistance.value;
+
+    atualizarSimulacao();
+});
+
+window.addEventListener("load", atualizarSimulacao());
+
+currentValue.addEventListener("input",()=>{
+    current.value = currentValue.value;
+    atualizarSimulacao();
+});
+
+turnsValue.addEventListener("input",()=>{
+    turns.value = turnsValue.value;
+    atualizarEspiras(Number(turns.value));
+    atualizarSimulacao();
+});
+
+fieldValue.addEventListener("input",()=>{
+    field.value = fieldValue.value;
+    atualizarCampoMagnetico(Number(field.value));
+    atualizarSimulacao();
+});
+
+resistanceValue.addEventListener("input",()=>{
+    resistance.value = resistanceValue.value;
+    atualizarSimulacao();
+});
+
+function atualizarTorque(torque){
+    const valor = document.getElementById("torque-value");
+    const arco = document.getElementById("torque-arc");
+    const ponteiro = document.getElementById("torque-needle");
+    valor.textContent =
+        `${torque.toFixed(2)} Nm`;
+
+    const torqueMax = 150;
+    const percentual =
+        Math.min(torque / torqueMax, 1);
+
+    const comprimentoArco = 346;
+    arco.style.strokeDashoffset =
+        comprimentoArco -
+        (comprimentoArco * percentual);
+    const angulo =
+        (-90) + (180 * percentual);
+    ponteiro.style.transform =
+        `rotate(${angulo}deg)`;
+}
+
+
+function atualizarPotencia(potenciaEntrada, potenciaPerdida, potenciaSaida){
+    document.getElementById("power-in")
+        .textContent =
+        `${potenciaEntrada.toFixed(0)} W`;
+    document.getElementById("power-loss")
+        .textContent =
+        `${potenciaPerdida.toFixed(0)} W`;
+    document.getElementById("power-out")
+        .textContent =
+        `${potenciaSaida.toFixed(0)} W`;
+    const eficiencia =
+        potenciaEntrada > 0
+        ? (potenciaSaida / potenciaEntrada) * 100
+        : 0;
+    document.getElementById("power-percent")
+        .textContent =
+        `${eficiencia.toFixed(1)}%`;
+    document.getElementById("power-efficiency-bar")
+        .style.width =
+        `${eficiencia}%`;
+}
+
+function atualizarEficiencia(valor){
+    const badge =
+        document.getElementById(
+            "efficiency-badge"
+        );
+    const texto =
+        document.getElementById(
+            "efficiency-value"
+        );
+    const descricao =
+        document.getElementById(
+            "efficiency-description"
+        );
+    texto.textContent =
+        `${valor.toFixed(1)}%`;
+    badge.className =
+        "efficiency-badge";
+
+    if(valor >= 90){
+        badge.classList.add("grade-a");
+        badge.textContent = "A";
+        descricao.textContent =
+            "Excelente rendimento";
+    }
+    else if(valor >= 75){
+        badge.classList.add("grade-b");
+        badge.textContent = "B";
+        descricao.textContent =
+            "Alto rendimento";
+    }
+    else if(valor >= 60){
+        badge.classList.add("grade-c");
+        badge.textContent = "C";
+        descricao.textContent =
+            "Bom rendimento";
+    }
+    else if(valor >= 45){
+        badge.classList.add("grade-d");
+        badge.textContent = "D";
+        descricao.textContent =
+            "Rendimento moderado";
+    }
+    else if(valor >= 25){
+        badge.classList.add("grade-e");
+        badge.textContent = "E";
+        descricao.textContent =
+            "Baixo rendimento";
+    }
+    else{
+        badge.classList.add("grade-f");
+        badge.textContent = "F";
+        descricao.textContent =
+            "Motor ineficiente";
+    }
+}
