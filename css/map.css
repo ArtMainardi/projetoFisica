@@ -17,6 +17,12 @@
     transform:rotate(-0.7deg);
 }
 
+.map-frame:hover{
+    transform:
+    rotate(-0.7deg)
+    scale(1.01);
+}
+
 .map-frame::before{
     content:"";
     width:240px;
@@ -49,4 +55,11 @@
     display:block;
     border-radius:20px;
     border:8px solid #eadbc0;
+    transition:.4s;
+}
+
+.map-image:hover{
+    filter:
+    saturate(1.15)
+    brightness(1.05);
 }

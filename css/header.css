@@ -5,7 +5,12 @@
 }
 
 .header-card{
-    background:#fff8ee;
+    background:
+        linear-gradient(
+        135deg,
+        #fff8ee,
+        #fff3db
+        );
     padding:30px 50px;
     border-radius:28px;
     transform:rotate(-1deg);
@@ -24,7 +29,9 @@
 
 .header-card h1{
     color:#4f685d;
-    font-size:3rem;
+    font-size:3.3rem;
+    text-shadow:
+    3px 3px 0 rgba(255,255,255,.7);
 }
 
 .header-card p{
@@ -59,9 +66,15 @@
 }
 
 .progress-fill{
-    width:0%;
+    width:25%;
     height:100%;
-    background:linear-gradient(90deg,#82c59f,#a4ddb9);
+    background:
+    linear-gradient(
+        90deg,
+        #9dd8b6,
+        #ffd54a,
+        #ff9b85
+    );
 }
 
 .banner-right{

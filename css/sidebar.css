@@ -1,5 +1,10 @@
 .info-sidebar{
-    background:#fffefb;
+    background:
+        linear-gradient(
+        180deg,
+        #fffefb,
+        #fff7e8
+        );
     border-radius:30px;
     padding:25px;
     box-shadow:0 15px 30px rgba(0,0,0,.08);
@@ -26,9 +31,15 @@
 }
 
 .robot-helper{
-    font-size:90px;
+    font-size:120px;
     margin-bottom:20px;
-    animation:floatRobot 3s infinite ease-in-out;
+    filter:
+    drop-shadow(
+        0 10px 15px rgba(0,0,0,.15)
+    );
+    animation:
+    floatRobot 3s infinite ease-in-out,
+    robotRotate 5s infinite ease-in-out;
 }
 
 #conteudo-vazio h3{
@@ -90,4 +101,18 @@
     0%{transform:translateY(0);}
     50%{transform:translateY(-10px);}
     100%{transform:translateY(0);}
+}
+
+@keyframes robotRotate{
+    0%{
+        rotate:-4deg;
+    }
+
+    50%{
+        rotate:4deg;
+    }
+
+    100%{
+        rotate:-4deg;
+    }
 }
