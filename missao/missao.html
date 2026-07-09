@@ -124,13 +124,49 @@
                         </div>
                     </div>
 
-                    <div class="chart-card">
-                        <div class="engineering-stage">
-                            <div class="stage-placeholder">
-                                <div class="stage-icon">📈</div>
-                                <h2>Centro de Análise do Motor</h2>
-                                <p>Os gráficos de desempenho serão exibidos aqui em tempo real durante a simulação.</p>
+                    <div class="analysis-grid">
+                        <div class="analysis-card">
+                            <h3>Torque</h3>
+                            <div class="torque-gauge">
+                                <svg viewBox="0 0 300 180">
+                                    <path
+                                        d="M40 150 A110 110 0 0 1 260 150"
+                                        class="gauge-bg"
+                                    />
+                                    <path
+                                        id="torque-arc"
+                                        d="M40 150 A110 110 0 0 1 260 150"
+                                        class="gauge-fill"
+                                    />
+                                    <line
+                                        id="torque-needle"
+                                        x1="150"
+                                        y1="150"
+                                        x2="150"
+                                        y2="55"
+                                        class="gauge-needle"
+                                    />
+                                    <circle
+                                        cx="150"
+                                        cy="150"
+                                        r="10"
+                                        class="gauge-center"
+                                    />
+                                </svg>
                             </div>
+
+                            <div id="torque-value" class="analysis-value">
+                                0.00 Nm
+                            </div>
+
+                        </div>
+
+                        <div class="analysis-card">
+                            Potência
+                        </div>
+
+                        <div class="analysis-card">
+                            Eficiência
                         </div>
                     </div>
                 </section>

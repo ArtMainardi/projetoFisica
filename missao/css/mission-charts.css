@@ -87,3 +87,62 @@
     font-size:220px;
     opacity:.05;
 }
+
+.analysis-card{
+    background:#fffaf0;
+    border-radius:24px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.analysis-card h3{
+    color:#4f685d;
+    margin-bottom:10px;
+}
+
+.torque-gauge{
+    width:100%;
+    max-width:260px;
+    margin:auto;
+}
+
+.torque-gauge svg{
+    width:100%;
+}
+
+.gauge-bg{
+    fill:none;
+    stroke:#e6dfd0;
+    stroke-width:20;
+    stroke-linecap:round;
+}
+
+.gauge-fill{
+    fill:none;
+    stroke:#f08a5d;
+    stroke-width:20;
+    stroke-linecap:round;
+    stroke-dasharray:346;
+    stroke-dashoffset:346;
+    transition:.4s;
+}
+
+.gauge-needle{
+    stroke:#4f685d;
+    stroke-width:6;
+    stroke-linecap:round;
+    transform-origin:150px 150px;
+    transition:.4s;
+}
+
+.gauge-center{
+    fill:#4f685d;
+}
+
+.analysis-value{
+    margin-top:15px;
+    font-size:1.4rem;
+    font-weight:bold;
+    color:#4f685d;
+}

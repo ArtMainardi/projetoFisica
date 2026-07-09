@@ -170,9 +170,8 @@ function atualizarSimulacao(){
         R
     );
 
-    atualizarRPM(
-        resultado.rpm
-    );
+    atualizarRPM(resultado.rpm);
+    atualizarTorque(resultado.torque);
 }
 current.addEventListener("input",()=>{
     document.getElementById("current-value").value =
@@ -231,3 +230,24 @@ resistanceValue.addEventListener("input",()=>{
     resistance.value = resistanceValue.value;
     atualizarSimulacao();
 });
+
+function atualizarTorque(torque){
+    const valor = document.getElementById("torque-value");
+    const arco = document.getElementById("torque-arc");
+    const ponteiro = document.getElementById("torque-needle");
+    valor.textContent =
+        `${torque.toFixed(2)} Nm`;
+
+    const torqueMax = 150;
+    const percentual =
+        Math.min(torque / torqueMax, 1);
+
+    const comprimentoArco = 346;
+    arco.style.strokeDashoffset =
+        comprimentoArco -
+        (comprimentoArco * percentual);
+    const angulo =
+        (-90) + (180 * percentual);
+    ponteiro.style.transform =
+        `rotate(${angulo}deg)`;
+}
