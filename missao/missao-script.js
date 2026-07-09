@@ -209,3 +209,25 @@ resistance.addEventListener("input",()=>{
 });
 
 window.addEventListener("load", atualizarSimulacao());
+
+currentValue.addEventListener("input",()=>{
+    current.value = currentValue.value;
+    atualizarSimulacao();
+});
+
+turnsValue.addEventListener("input",()=>{
+    turns.value = turnsValue.value;
+    atualizarEspiras(Number(turns.value));
+    atualizarSimulacao();
+});
+
+fieldValue.addEventListener("input",()=>{
+    field.value = fieldValue.value;
+    atualizarCampoMagnetico(Number(field.value));
+    atualizarSimulacao();
+});
+
+resistanceValue.addEventListener("input",()=>{
+    resistance.value = resistanceValue.value;
+    atualizarSimulacao();
+});
