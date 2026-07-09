@@ -152,3 +152,57 @@ field.addEventListener("input",()=>{
     document.getElementById("field-value").textContent =
         `${field.value} T`;
 });
+
+
+function atualizarSimulacao(){
+    const I = Number(current.value);
+    const N = Number(turns.value);
+    const B = Number(field.value);
+    const R = Number(resistance.value);
+
+    const resultado = calcularFisicaMotor(
+        N,
+        I,
+        B,
+        R
+    );
+
+    atualizarRPM(
+        resultado.rpm
+    );
+}
+current.addEventListener("input",()=>{
+    document.getElementById("current-value").textContent =
+        `${current.value} A`;
+
+    atualizarSimulacao();
+});
+
+turns.addEventListener("input",()=>{
+    atualizarEspiras(
+        Number(turns.value)
+    );
+    document.getElementById("turns-value").textContent =
+        turns.value;
+
+    atualizarSimulacao();
+});
+
+field.addEventListener("input",()=>{
+    atualizarCampoMagnetico(
+        Number(field.value)
+    );
+    document.getElementById("field-value").textContent =
+        `${field.value} T`;
+
+    atualizarSimulacao();
+});
+
+resistance.addEventListener("input",()=>{
+    document.getElementById("resistance-value").textContent =
+        `${resistance.value} Ω`;
+
+    atualizarSimulacao();
+});
+
+window.addEventListener("load", atualizarSimulacao());
