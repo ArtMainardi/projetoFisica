@@ -29,6 +29,23 @@ const dadosMissoes = {
     }
 };
 
+function selecionarMissao(id) {
+    const missao = dadosMissoes[id];
+
+    // Esconde a mensagem de "vazio" e mostra o bloco de conteúdo
+    document.getElementById("conteudo-vazio").style.display = "none";
+    document.getElementById("conteudo-missao").style.display = "block";
+
+    // Injeta as informações da missão clicada na barra lateral
+    document.getElementById("sidebar-titulo").innerText = missao.nome;
+    document.getElementById("sidebar-desafio").innerText = missao.desafio;
+    document.getElementById("sidebar-descricao").innerText = missao.descricao;
+    document.getElementById("sidebar-imagem").src = missao.imagem;
+    document.getElementById("sidebar-botao").href = missao.link;
+
+    document.getElementById("sidebar-missao").classList.add("missao-ativa");
+}
+
 function atualizarProgresso() {
     const concluidas = getMissoesConcluidas().length;
     const total = TOTAL_MISSOES;
@@ -82,7 +99,7 @@ function selecionarMissao(id) {
     document.getElementById('sidebar-descricao').textContent = missao.descricao;
 
     const botao = document.getElementById('sidebar-botao');
-    botao.href = missao.link;
+    botao.href = `/missao/missao.html?id=${id}`;
 
     // Verifica se já foi concluída
     const concluida = isMissaoConcluida(id);
