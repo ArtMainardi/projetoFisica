@@ -345,6 +345,22 @@ const missao =
 
 
 function carregarMissao() {
+    // Verifica se a missão existe
+    if (!missao) {
+        console.error("Missão não encontrada! ID:", idRecebido);
+        return;
+    }
+
+    // Atualiza o cabeçalho
+    document.getElementById("mission-title").textContent = missao.nome;
+    document.getElementById("mission-subtitle").textContent = missao.subtitulo;
+
+    // Atualiza a imagem
+    const img = document.getElementById("mission-image");
+    img.src = missao.imagem;
+    img.alt = missao.nome;
+
+    // Atualiza os requisitos (apenas 4 itens: torque, rpm, eficiência, potência)
     const req = missao.requisitos;
     document.getElementById("mission-requirements").innerHTML = `
         <div class="challenge-title">⚙️ ${missao.desafio}</div>
