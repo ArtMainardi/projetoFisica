@@ -1,4 +1,5 @@
 .mission-panel{
+    min-height: 700px;
     background:#fff8ee;
     border-radius:30px;
     padding:25px;
