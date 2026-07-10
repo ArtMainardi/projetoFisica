@@ -72,26 +72,12 @@ window.addEventListener('load', function() {
 
 
 function atualizarPins() {
-    const concluidas = getMissoesConcluidas();
     document.querySelectorAll('.map-pin').forEach(pin => {
-        const id = parseInt(pin.dataset.missaoId) || 
-                   (pin.classList.contains('pin-chiesetta') ? 1 :
-                    pin.classList.contains('pin-viaverde') ? 2 :
-                    pin.classList.contains('pin-scar') ? 3 :
-                    pin.classList.contains('pin-rodoviaria') ? 4 : 0);
-        if (id && concluidas.includes(id)) {
+        const id = parseInt(pin.dataset.missaoId);
+        if (id && isMissaoConcluida(id)) {
             pin.classList.add('concluida');
-            // Adiciona um checkmark se não existir
-            if (!pin.querySelector('.check-mark')) {
-                const check = document.createElement('span');
-                check.className = 'check-mark';
-                check.textContent = '✅';
-                pin.appendChild(check);
-            }
         } else {
             pin.classList.remove('concluida');
-            const check = pin.querySelector('.check-mark');
-            if (check) check.remove();
         }
     });
 }
@@ -142,3 +128,15 @@ function selecionarMissao(id) {
     atualizarPins();
     atualizarProgresso();
 }
+
+document.getElementById('reset-progress-btn').addEventListener('click', function() {
+    if (confirm('Tem certeza que deseja resetar todo o progresso das missões?')) {
+        resetarProgresso();           // limpa o localStorage
+        atualizarProgresso();         // atualiza banner (0/4)
+        atualizarPins();              // remove classe "concluida" dos pins
+        // Se a sidebar estiver mostrando alguma missão, recarrega-a
+        const id = new URLSearchParams(window.location.search).get('missao');
+        if (id) selecionarMissao(Number(id));
+        alert('Progresso resetado com sucesso!');
+    }
+});
