@@ -353,7 +353,7 @@ function carregarMissao() {
     // Preenche título, subtítulo, imagem
     document.getElementById("mission-title").textContent = missao.nome;
     document.getElementById("mission-subtitle").textContent = missao.subtitulo;
-    document.getElementById("mission-image").src = missao.imagem;
+    document.getElementById("mission-image").src = "imagens/" + missao.imagem;
     document.getElementById("mission-image").alt = missao.nome;
 
     // Requisitos (4 itens)
