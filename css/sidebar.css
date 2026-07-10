@@ -117,3 +117,26 @@
         rotate:-4deg;
     }
 }
+
+
+#sidebar-status {
+    margin: 10px 0;
+}
+.badge-concluida {
+    background: #4caf50;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+}
+.badge-pendente {
+    background: #ff9800;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+}

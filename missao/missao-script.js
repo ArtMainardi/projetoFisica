@@ -345,22 +345,18 @@ const missao =
 
 
 function carregarMissao() {
-    // Verifica se a missão existe
     if (!missao) {
-        console.error("Missão não encontrada! ID:", idRecebido);
+        console.error("Missão não encontrada!");
         return;
     }
 
-    // Atualiza o cabeçalho
+    // Preenche título, subtítulo, imagem
     document.getElementById("mission-title").textContent = missao.nome;
     document.getElementById("mission-subtitle").textContent = missao.subtitulo;
+    document.getElementById("mission-image").src = missao.imagem;
+    document.getElementById("mission-image").alt = missao.nome;
 
-    // Atualiza a imagem
-    const img = document.getElementById("mission-image");
-    img.src = missao.imagem;
-    img.alt = missao.nome;
-
-    // Atualiza os requisitos (apenas 4 itens: torque, rpm, eficiência, potência)
+    // Requisitos (4 itens)
     const req = missao.requisitos;
     document.getElementById("mission-requirements").innerHTML = `
         <div class="challenge-title">⚙️ ${missao.desafio}</div>
@@ -384,6 +380,41 @@ function carregarMissao() {
             </div>
         </div>
     `;
+
+    // Verifica se já foi concluída
+    const concluida = isMissaoConcluida(idRecebido);
+    const selo = document.getElementById('missao-status-selo');
+    if (concluida) {
+        selo.innerHTML = '<span class="badge-concluida" style="font-size:18px;padding:8px 20px;">✅ CONTRATO CONCLUÍDO</span>';
+        // Desabilita os sliders
+        document.querySelectorAll('.slider-group input[type="range"]').forEach(input => {
+            input.disabled = true;
+        });
+        document.querySelectorAll('.slider-group input[type="number"]').forEach(input => {
+            input.disabled = true;
+        });
+        // Desabilita o botão de finalizar ou muda para "Revisitar"
+        const finishBtn = document.getElementById('finish-btn');
+        if (finishBtn) {
+            finishBtn.textContent = '✅ Missão já concluída';
+            finishBtn.disabled = true;
+            finishBtn.style.opacity = '0.6';
+            finishBtn.style.cursor = 'default';
+        }
+    } else {
+        selo.innerHTML = '<span class="badge-pendente" style="font-size:18px;padding:8px 20px;">⏳ Missão Ativa</span>';
+        // Habilita tudo (caso tenha sido desabilitado anteriormente)
+        document.querySelectorAll('.slider-group input').forEach(input => {
+            input.disabled = false;
+        });
+        const finishBtn = document.getElementById('finish-btn');
+        if (finishBtn) {
+            finishBtn.textContent = '✅ Finalizar Missão';
+            finishBtn.disabled = false;
+            finishBtn.style.opacity = '1';
+            finishBtn.style.cursor = 'pointer';
+        }
+    }
 }
 
 window.addEventListener(
@@ -407,8 +438,17 @@ document.getElementById("finish-btn").addEventListener("click", function() {
         resultado.potenciaMecanica >= req.potenciaMin;
 
     if (aprovado) {
+        // SALVA A MISSÃO COMO CONCLUÍDA
+        const missoesConcluidas = JSON.parse(localStorage.getItem('missoesConcluidas')) || [];
+        if (!missoesConcluidas.includes(idRecebido)) {
+            missoesConcluidas.push(idRecebido);
+            localStorage.setItem('missoesConcluidas', JSON.stringify(missoesConcluidas));
+        }
+        carregarMissao();
+        
         alert("✅ Missão concluída com sucesso! Contrato finalizado.");
-        // Você pode adicionar efeitos, liberar próxima missão, etc.
+        // Opcional: redirecionar para a página inicial após alguns segundos
+        // setTimeout(() => { window.location.href = "index.html"; }, 1500);
     } else {
         let mensagem = "❌ Você ainda não atingiu todos os requisitos:\n";
         if (resultado.torque < req.torqueMin) mensagem += `- Torque: ${resultado.torque.toFixed(1)} Nm (mínimo ${req.torqueMin})\n`;

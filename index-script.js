@@ -45,3 +45,100 @@ function selecionarMissao(id) {
 
     document.getElementById("sidebar-missao").classList.add("missao-ativa");
 }
+
+function atualizarProgresso() {
+    const concluidas = getMissoesConcluidas().length;
+    const total = TOTAL_MISSOES;
+
+    document.querySelector('.banner-right').textContent = `${concluidas}/${total} Contratos Concluídos`;
+
+    const progressFill = document.querySelector('.progress-fill');
+    const percent = Math.min((concluidas / total) * 100, 100);
+    progressFill.style.width = `${percent}%`;
+    progressFill.style.background = concluidas === total ? '#4caf50' : '#76be90';
+}
+
+// Executa ao carregar a página
+window.addEventListener('load', function() {
+    atualizarProgresso();
+    atualizarPins();
+    // Se houver missão selecionada via URL, carrega a sidebar também
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get('missao'));
+    if (id && dadosMissoes[id]) {
+        selecionarMissao(id);
+    }
+});
+
+
+function atualizarPins() {
+    const concluidas = getMissoesConcluidas();
+    document.querySelectorAll('.map-pin').forEach(pin => {
+        const id = parseInt(pin.dataset.missaoId) || 
+                   (pin.classList.contains('pin-chiesetta') ? 1 :
+                    pin.classList.contains('pin-viaverde') ? 2 :
+                    pin.classList.contains('pin-scar') ? 3 :
+                    pin.classList.contains('pin-rodoviaria') ? 4 : 0);
+        if (id && concluidas.includes(id)) {
+            pin.classList.add('concluida');
+            // Adiciona um checkmark se não existir
+            if (!pin.querySelector('.check-mark')) {
+                const check = document.createElement('span');
+                check.className = 'check-mark';
+                check.textContent = '✅';
+                pin.appendChild(check);
+            }
+        } else {
+            pin.classList.remove('concluida');
+            const check = pin.querySelector('.check-mark');
+            if (check) check.remove();
+        }
+    });
+}
+
+
+function selecionarMissao(id) {
+    const missao = dadosMissoes[id];
+    if (!missao) return;
+
+    const sidebar = document.getElementById('conteudo-missao');
+    const vazio = document.getElementById('conteudo-vazio');
+    vazio.style.display = 'none';
+    sidebar.style.display = 'block';
+
+    document.getElementById('sidebar-titulo').textContent = missao.nome;
+    document.getElementById('sidebar-imagem').src = missao.imagem;
+    document.getElementById('sidebar-imagem').alt = missao.nome;
+    document.getElementById('sidebar-desafio').textContent = `Desafio: ${missao.desafio}`;
+    document.getElementById('sidebar-descricao').textContent = missao.descricao;
+
+    const botao = document.getElementById('sidebar-botao');
+    botao.href = `/missao/missao.html?id=${id}`;
+
+    // Verifica se já foi concluída
+    const concluida = isMissaoConcluida(id);
+    const statusDiv = document.getElementById('sidebar-status') || document.createElement('div');
+    statusDiv.id = 'sidebar-status';
+    if (concluida) {
+        statusDiv.innerHTML = '<span class="badge-concluida">✅ CONCLUÍDO</span>';
+        botao.textContent = '🔁 Revisitar Missão';
+        botao.style.background = '#4caf50';
+        botao.style.color = 'white';   // força branco
+    } else {
+        statusDiv.innerHTML = '<span class="badge-pendente">⏳ Pendente</span>';
+        botao.textContent = '🚀 Iniciar Simulação';
+        botao.style.background = '#4f685d';
+        botao.style.color = 'white';   // força branco
+    }
+    // Insere o status antes do botão (se não existir, cria)
+    const container = document.getElementById('conteudo-missao');
+    if (!document.getElementById('sidebar-status')) {
+        container.insertBefore(statusDiv, botao);
+    } else {
+        document.getElementById('sidebar-status').replaceWith(statusDiv);
+    }
+
+    // Atualiza também os pins (em caso de mudança)
+    atualizarPins();
+    atualizarProgresso();
+}

@@ -56,10 +56,10 @@
                 <div class="map-label">🗺️ Mapa das Missões</div>
                 <section class="map-container">
                     <img src="mapaJaragua.jpg" alt="Mapa de Jaraguá do Sul" class="map-image">
-                    <button class="map-pin pin-chiesetta" onclick="selecionarMissao(1)" aria-label="Chiesetta Alpina" title="Chiesetta Alpina">⛪</button>
-                    <button class="map-pin pin-viaverde" onclick="selecionarMissao(2)" aria-label="Parque Via Verde" title="Parque Via Verde">🌳</button>
-                    <button class="map-pin pin-scar" onclick="selecionarMissao(3)" aria-label="Centro Cultural SCAR" title="Centro Cultural SCAR">🎭</button>
-                    <button class="map-pin pin-rodoviaria" onclick="selecionarMissao(4)" aria-label="Terminal Rodoviário" title="Terminal Rodoviário">🚌</button>
+                    <button class="map-pin pin-chiesetta" data-missao-id="1" onclick="selecionarMissao(1)">⛪</button>
+                    <button class="map-pin pin-viaverde" data-missao-id="2" onclick="selecionarMissao(2)">🌳</button>
+                    <button class="map-pin pin-scar" data-missao-id="3" onclick="selecionarMissao(3)">🎭</button>
+                    <button class="map-pin pin-rodoviaria" data-missao-id="4" onclick="selecionarMissao(4)">🚌</button>
                 </section>
             </section>
 
@@ -87,6 +87,7 @@
             </aside>
         </main>
 
+        <script src="missao/progresso.js"></script>
         <script src="index-script.js"></script>
     </body>
 </html>

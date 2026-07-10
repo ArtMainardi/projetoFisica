@@ -114,3 +114,21 @@
     background:#7bc58e;
     color:white;
 }
+
+.badge-concluida {
+    background: #4caf50;
+    color: white;
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 10px rgba(76,175,80,0.4);
+}
+.badge-pendente {
+    background: #ff9800;
+    color: white;
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-weight: bold;
+    display: inline-block;
+}
